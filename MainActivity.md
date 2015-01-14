@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity  {
+public class MainActivity extends Activity implements OnItemClickListener  {
 	 		DrawerLayout drawerLayout;
 	 		ListView listView;
 	 		AdapterList adapterList;
@@ -38,16 +38,17 @@ public class MainActivity extends Activity  {
       
        
        drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout); 
-       
-        
+         
         
     }//OnCreate Closing...
 
-	/*@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-			//Toast.makeText(getBaseContext(), "Test", Toast.LENGTH_SHORT).show();
-	}*/
-    
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
+		Toast.makeText(getBaseContext(), adapterList.menu[position] + "Test" , Toast.LENGTH_SHORT).show();
+
+	}
+
+	
      
     
 
